@@ -1,0 +1,11 @@
+.CreateCharacter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    background-color: black;
+    font-size: 0.75rem;
+    margin-bottom: -0.4rem;
+  }
+}
