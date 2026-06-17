@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import { Inventory } from "./components/inventory";
 import { Loader } from "./components/loader";
-import { Overworld } from "./components/overworld";
 import { signInWithGoogle, useAuth } from "./lib/auth";
 import { useCollection } from "./lib/firestore";
 import { useTransaction } from "./lib/transaction";
 import { charactersRef } from "./models/character";
 import { createCharacterTransaction } from "./transactions/character";
+import { Overworld } from "./components/overworld";
 
 function App() {
   const auth = useAuth();
@@ -36,7 +37,12 @@ const Game: React.FC<{ userUid: string }> = (props) => {
     return <CreateCharacter userUid={props.userUid}></CreateCharacter>;
   }
 
-  return <Overworld></Overworld>;
+  return (
+    <div className="Game">
+      <Overworld character={character}></Overworld>
+      <Inventory character={character}></Inventory>
+    </div>
+  );
 };
 
 const CreateCharacter: React.FC<{ userUid: string }> = (props) => {

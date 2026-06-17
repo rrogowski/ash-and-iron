@@ -1,0 +1,17 @@
+.Inventory {
+  background-color: #474747;
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(3, 40px);
+
+  .slot {
+    padding: 4px;
+    position: relative;
+  }
+
+  .quantity {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
